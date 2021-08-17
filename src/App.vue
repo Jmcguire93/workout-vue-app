@@ -8,6 +8,8 @@
       <router-link to="/workouts">Workouts</router-link>
       |
       <router-link to="/exercises">Exercises</router-link>
+      |
+      <router-link to="/workouts/new">Create Workout</router-link>
     </div>
     <router-view />
   </div>
