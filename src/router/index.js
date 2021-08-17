@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import WorkoutsIndex from "../views/WorkoutsIndex";
 import ExercisesIndex from "../views/ExercisesIndex";
 import WorkoutsShow from "../views/WorkoutsShow";
+import ExercisesShow from "../views/ExercisesShow";
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
     path: "/workouts/:id",
     name: "workouts-show",
     component: WorkoutsShow,
+  },
+  {
+    path: "/exercises/:id",
+    name: "exercises-show",
+    component: ExercisesShow,
   },
 ];
 
