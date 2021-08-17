@@ -47,11 +47,6 @@ const routes = [
     component: WorkoutsIndex,
   },
   {
-    path: "/exercises",
-    name: "exercises-index",
-    component: ExercisesIndex,
-  },
-  {
     path: "/workouts/new",
     name: "workouts-new",
     component: WorkoutsNew,
@@ -60,6 +55,11 @@ const routes = [
     path: "/workouts/:id",
     name: "workouts-show",
     component: WorkoutsShow,
+  },
+  {
+    path: "/exercises",
+    name: "exercises-index",
+    component: ExercisesIndex,
   },
   {
     path: "/exercises/:id",

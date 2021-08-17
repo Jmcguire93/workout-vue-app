@@ -5,7 +5,7 @@
       <p>{{ workout.description }}</p>
       <p>Created by: {{ workout.user.username }}</p>
       <!-- <img v-bind:src="workout.image" alt="workout.name" /> -->
-      <li v-if="$parent.getUserId() == workout.user_id">
+      <li v-if="$parent.getUserId() == workout.current_user_id">
         <router-link v-bind:to="`/workouts/${workout.id}/edit`"><button>Edit workout</button></router-link>
       </li>
       <router-link to="/workouts">Back to all workouts</router-link>

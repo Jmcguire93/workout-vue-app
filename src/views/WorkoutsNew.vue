@@ -5,11 +5,13 @@
       <h1>New Workout!</h1>
       <div>
         Name:
-        <input type="text" v-model="newWorkoutParams.title" />
+        <input type="text" v-model="newWorkoutParams.name" />
         Description:
-        <input type="text" v-model="newWorkoutParams.body" />
-        <!-- Image:
-        <input type="text" v-model="newWorkoutParams.image" /> -->
+        <input type="text" v-model="newWorkoutParams.description" />
+        <!-- User Id: -->
+        <!-- <input type="text" v-model="newWorkoutParams.user_id" /> -->
+        <!-- Image: -->
+        <!-- <input type="text" v-model="newWorkoutParams.image" /> -->
       </div>
       <button v-on:click="createWorkout()">Create</button>
     </form>
@@ -21,17 +23,17 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Here are workouts!",
-      workouts: [],
+      // workouts: [],
       errors: [],
       newWorkoutParams: {},
-      currentWorkout: {},
+      // currentWorkout: {},
       status: "",
     };
   },
   methods: {
     createWorkout: function () {
       console.log("Creating a workout!");
+
       axios
         .post("/workouts", this.newWorkoutParams)
         .then((response) => {
