@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
+import Logout from "../views/Logout.vue";
 import WorkoutsIndex from "../views/WorkoutsIndex";
 import WorkoutsNew from "../views/WorkoutsNew";
 import WorkoutsShow from "../views/WorkoutsShow";
@@ -34,6 +35,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login,
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    component: Logout,
   },
   {
     path: "/workouts",
