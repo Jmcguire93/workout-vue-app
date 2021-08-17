@@ -6,6 +6,8 @@
       <router-link to="/about">About</router-link>
       |
       <router-link to="/workouts">Workouts</router-link>
+      |
+      <router-link to="/exercises">Exercises</router-link>
     </div>
     <router-view />
   </div>

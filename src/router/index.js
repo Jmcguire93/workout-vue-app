@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import WorkoutsIndex from "../views/WorkoutsIndex";
+import ExercisesIndex from "../views/ExercisesIndex";
 
 Vue.use(VueRouter);
 
@@ -19,11 +20,15 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
-
   {
     path: "/workouts",
     name: "workouts-index",
     component: WorkoutsIndex,
+  },
+  {
+    path: "/exercises",
+    name: "exercises-index",
+    component: ExercisesIndex,
   },
 ];
 
