@@ -4,6 +4,7 @@
     <div v-for="workout in workouts" :key="workout.id">
       <h2>Name: {{ workout.name }}</h2>
       <p>Description: {{ workout.description }}</p>
+      <p>Created by: {{ workout.user.username }}</p>
       <!-- <img v-bind:src="workout.image" alt="workout.name" /> -->
       <p><router-link v-bind:to="`/workouts/${workout.id}`">Link to workout</router-link></p>
     </div>

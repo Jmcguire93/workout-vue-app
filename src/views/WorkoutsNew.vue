@@ -1,6 +1,6 @@
 <template>
   <div class="workouts-new">
-    <!-- <img v-if="status" :src="`https://http.cat/${status}`" /> -->
+    <img v-if="status" :src="`https://http.cat/${status}`" />
     <form v-on:submit.prevent="createWorkout()">
       <h1>New Workout!</h1>
       <div>
@@ -8,8 +8,8 @@
         <input type="text" v-model="newWorkoutParams.title" />
         Description:
         <input type="text" v-model="newWorkoutParams.body" />
-        Image:
-        <input type="text" v-model="newWorkoutParams.image" />
+        <!-- Image:
+        <input type="text" v-model="newWorkoutParams.image" /> -->
       </div>
       <button v-on:click="createWorkout()">Create</button>
     </form>
