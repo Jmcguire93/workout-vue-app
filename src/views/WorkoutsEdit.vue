@@ -43,13 +43,13 @@ export default {
     updateWorkout: function () {
       axios.patch(`/workouts/${this.$route.params.id}`, this.currentWorkoutParams).then((response) => {
         console.log(response.data);
-        this.$router.push(`/workouts/${response.data.id}/edit`);
+        this.$router.push("/workouts");
       });
     },
     destroyWorkout: function () {
-      axios.delete(` /workouts/${this.$route.params.id}`).then((response) => {
+      axios.delete(`/workouts/${this.$route.params.id}`).then((response) => {
         console.log("Workout deleted", response.data);
-        this.$router.push("/workouts");
+        this.$router.push(`/workouts/${this.$route.params.id}`);
       });
     },
   },

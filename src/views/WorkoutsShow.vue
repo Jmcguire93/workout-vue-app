@@ -4,6 +4,9 @@
       <h2>{{ workout.name }}</h2>
       <p>{{ workout.description }}</p>
       <p>Created by: {{ workout.user.username }}</p>
+      <p>{{ workout.exercises }}</p>
+      <!-- <p>{{ workout.id.exercise.muscle_group }}</p>
+      <p>{{ workout.id.exercise.instructions }}</p> -->
       <!-- <img v-bind:src="workout.image" alt="workout.name" /> -->
       <li v-if="$parent.getUserId() == workout.current_user_id">
         <router-link v-bind:to="`/workouts/${workout.id}/edit`"><button>Edit workout</button></router-link>
@@ -21,6 +24,7 @@ export default {
     return {
       errors: [],
       workout: {},
+      exercises: [],
     };
   },
   created: function () {
