@@ -6,10 +6,9 @@
       <p>Created by: {{ user.username }}</p>
       <div v-for="exercise in exercises" :key="exercise.id">
         <p>{{ exercise.name }}</p>
+        <!-- <img v-bind:src="exercise.image" alt="workout.name" /> -->
       </div>
-      <!-- <p>{{ workout.id.exercise.muscle_group }}</p>
-      <p>{{ workout.id.exercise.instructions }}</p> -->
-      <!-- <img v-bind:src="workout.image" alt="workout.name" /> -->
+
       <li v-if="$parent.getUserId() == workout.current_user_id">
         <router-link v-bind:to="`/workouts/${workout.id}/edit`"><button>Edit workout</button></router-link>
       </li>
@@ -28,6 +27,7 @@ export default {
       workout: {},
       exercises: [],
       user: {},
+      // current_user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {

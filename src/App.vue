@@ -5,17 +5,24 @@
       |
       <router-link to="/about">About</router-link>
       |
-      <router-link to="/signup">Signup</router-link>
-      |
-      <router-link to="/login">Login</router-link>
-      |
-      <router-link to="/logout">Logout</router-link>
-      |
       <router-link to="/workouts">Workouts</router-link>
       |
       <router-link to="/exercises">Exercises</router-link>
       |
       <router-link to="/workouts/new">Create Workout</router-link>
+      |
+      <li v-if="!isLoggedIn()">
+        <router-link to="/signup">Signup</router-link>
+        |
+      </li>
+      <li v-if="!isLoggedIn()">
+        <router-link to="/login">Login</router-link>
+        |
+      </li>
+      <li v-if="isLoggedIn()">
+        <router-link to="/logout">Logout</router-link>
+        |
+      </li>
     </div>
     <router-view />
   </div>
