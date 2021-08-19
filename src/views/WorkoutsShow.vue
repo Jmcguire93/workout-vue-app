@@ -3,8 +3,10 @@
     <div class="container">
       <h2>{{ workout.name }}</h2>
       <p>{{ workout.description }}</p>
-      <p>Created by: {{ workout.user.username }}</p>
-      <p>{{ workout.exercises }}</p>
+      <p>Created by: {{ user.username }}</p>
+      <div v-for="exercise in exercises" :key="exercise.id">
+        <p>{{ exercise.name }}</p>
+      </div>
       <!-- <p>{{ workout.id.exercise.muscle_group }}</p>
       <p>{{ workout.id.exercise.instructions }}</p> -->
       <!-- <img v-bind:src="workout.image" alt="workout.name" /> -->
@@ -25,11 +27,14 @@ export default {
       errors: [],
       workout: {},
       exercises: [],
+      user: {},
     };
   },
   created: function () {
     axios.get("http://localhost:3000/workouts/" + this.$route.params.id).then((response) => {
       this.workout = response.data;
+      this.exercises = response.data.exercises;
+      this.user = response.data.user;
       console.log(response.data);
     });
   },

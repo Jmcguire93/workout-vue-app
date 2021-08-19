@@ -13,10 +13,9 @@
       <dialog id="workout-exercises">
         <form method="dialog">
           <select v-model="selected">
-            <option disabled value="">Please select one</option>
-            <option>A</option>
-            <option>B</option>
-            <option>C</option>
+            <!-- <option disabled value="">Please select one</option> -->
+            <!-- <option>{{ workout }}</option> -->
+            <option v-for="workout in workouts" :key="workout.id">{{ workout.name }}</option>
           </select>
           <span>Selected: {{ selected }}</span>
           <h1>Exercise Info</h1>
@@ -35,14 +34,6 @@
           <p>
             Notes:
             <input type="text" v-model="newWorkoutExerciseParams.notes" />
-          </p>
-          <p>
-            Workout ID to add to:
-            <input type="text" v-model="newWorkoutExerciseParams.workout_id" />
-          </p>
-          <p>
-            Exercise ID to add to:
-            <input type="text" v-model="newWorkoutExerciseParams.exercise_id" />
           </p>
           <!-- <button v-on:click="updateWorkoutExercise(currentWorkoutExercise)">Update</button>
           <button v-on:click="destroyWorkoutExercise(currentWorkoutExercise)">Destroy</button> -->
@@ -64,7 +55,7 @@ export default {
       newWorkoutExerciseParams: {},
       currentWorkoutExercise: {},
       workouts: [],
-      selectedWorkout: {},
+      selectedWorkoutId: 0,
       selected: "",
     };
   },
@@ -78,10 +69,15 @@ export default {
   methods: {
     createWorkoutExercise: function () {
       console.log("Creating a workout!");
-      // var params = {
-      //   workout_id: x,
-      //   exercise_id: this.exercise.id,
-      // };
+      for (var i = 0; i < this.workouts.length; i++) {
+        if (this.workouts[i].name === this.selected) {
+          this.selectedWorkoutId = this.workouts[i].id;
+        }
+      }
+      console.log(this.selectedWorkoutId);
+      this.newWorkoutExerciseParams["workout_id"] = this.selectedWorkoutId;
+      this.newWorkoutExerciseParams["exercise_id"] = this.exercise.id;
+
       axios
         .post("/workout_exercises", this.newWorkoutExerciseParams)
         .then((response) => {
@@ -98,7 +94,7 @@ export default {
     indexWorkouts: function () {
       axios.get("http://localhost:3000/workouts/users_index").then((response) => {
         this.workouts = response.data;
-        console.log("All workouts:", this.workouts);
+        console.log("User workouts:", this.workouts);
       });
     },
   },
