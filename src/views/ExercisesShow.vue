@@ -5,9 +5,8 @@
       <p>{{ exercise.muscle_group }}</p>
       <p>{{ exercise.instructions }}</p>
       <img v-bind:src="exercise.image" alt="exercise.name" />
-      <li v-if="$parent.getUserId() == exercise.user_id">
+      <li v-if="$parent.getUserId() == user_id">
         <button v-on:click="openModal()">Add Exercise</button>
-        <!-- This router link (line 9) needs to open a form to input a workout id and create workoutexercises instance. -->
       </li>
       <router-link to="/exercises">Back to all exercises</router-link>
       <dialog id="workout-exercises">
@@ -57,6 +56,7 @@ export default {
       workouts: [],
       selectedWorkoutId: 0,
       selected: "",
+      user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
@@ -81,7 +81,7 @@ export default {
       axios
         .post("/workout_exercises", this.newWorkoutExerciseParams)
         .then((response) => {
-          this.$router.push("/workouts");
+          this.$router.push(`/workouts/${this.selectedWorkoutId}`);
           console.log("Success!", response.data);
         })
         .catch((error) => {

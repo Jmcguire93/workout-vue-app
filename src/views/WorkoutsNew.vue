@@ -13,7 +13,7 @@
         <!-- Image: -->
         <!-- <input type="text" v-model="newWorkoutParams.image" /> -->
       </div>
-      <button v-on:click="createWorkout()">Create</button>
+      <input type="submit" value="Create" />
     </form>
   </div>
 </template>
