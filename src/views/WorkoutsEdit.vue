@@ -19,8 +19,8 @@
       </div> -->
 
       <input type="submit" value="Submit" />
-      <button v-on:click="destroyWorkout()">Delete</button>
     </form>
+    <button v-on:click="destroyWorkout()">Delete</button>
   </div>
 </template>
 
@@ -49,7 +49,7 @@ export default {
     destroyWorkout: function () {
       axios.delete(`/workouts/${this.$route.params.id}`).then((response) => {
         console.log("Workout deleted", response.data);
-        this.$router.push(`/workouts/${this.$route.params.id}`);
+        this.$router.push("/workouts");
       });
     },
   },
