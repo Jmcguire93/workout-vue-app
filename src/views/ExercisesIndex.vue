@@ -4,7 +4,7 @@
     <div v-for="exercise in exercises" :key="exercise.id">
       <h2>{{ exercise.name }}</h2>
       <p>Muscle Group: {{ exercise.muscle_group }}</p>
-      <p>Instructions: {{ exercise.instructions }}</p>
+      <!-- <p>Instructions: {{ exercise.instructions }}</p> -->
       <img v-bind:src="exercise.image" alt="exercise.name" />
       <p><router-link v-bind:to="`/exercises/${exercise.id}`">Link to exercise</router-link></p>
     </div>

@@ -9,8 +9,10 @@
       |
       <router-link to="/exercises">Exercises</router-link>
       |
-      <router-link to="/workouts/new">Create Workout</router-link>
-      |
+      <li v-if="isLoggedIn()">
+        <router-link to="/workouts/new">Create Workout</router-link>
+        |
+      </li>
       <li v-if="!isLoggedIn()">
         <router-link to="/signup">Signup</router-link>
         |

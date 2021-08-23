@@ -7,8 +7,8 @@
       <div v-for="(exercise, index) in exercises" :key="exercise.id">
         <!-- <div v-for="workout_exercise in workout_exercises" :key="workout_exercise.id"> -->
         <p>Exercise: {{ exercise.name }}</p>
-        <p>Sets: {{ workout_exercises[index].sets }}</p>
-        <p>Reps: {{ workout_exercises[index].reps }}</p>
+        <p>Sets: {{ workout_exercises[index].sets }}, Reps: {{ workout_exercises[index].reps }}</p>
+        <!-- <p>Reps: {{ workout_exercises[index].reps }}</p> -->
         <p>Weight: {{ workout_exercises[index].weight }}</p>
         <p>Notes: {{ workout_exercises[index].notes }}</p>
 
