@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <router-link to="/exercises">Exercises</router-link>
+    |
+    <router-link to="/workouts">Workouts</router-link>
   </div>
 </template>
 
@@ -10,7 +13,7 @@
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      message: "Welcome to WorkoutApp!",
     };
   },
   created: function () {},

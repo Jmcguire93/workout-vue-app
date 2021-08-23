@@ -12,7 +12,7 @@
         <p>Weight: {{ workout_exercise.weight }}</p>
         <p>Notes: {{ workout_exercise.notes }}</p>
 
-        <li v-if="$parent.getUserId() == user_id">
+        <li v-if="$parent.getUserId() == current_user_id">
           <button v-on:click="openModal(workout_exercise.id)">Edit Exercise</button>
         </li>
       </div>
@@ -45,7 +45,7 @@
       </li>
       <router-link to="/workouts">Back to all workouts</router-link>
       |
-      <router-link to="/exercises">Select an exercise to add</router-link>
+      <router-link to="/exercises">Add Exercise</router-link>
     </div>
   </div>
 </template>
@@ -65,6 +65,7 @@ export default {
       newWorkoutExerciseParams: {},
       currentWorkoutExercise: {},
       exerciseParams: {},
+      current_user_id: {},
     };
   },
   created: function () {
@@ -73,6 +74,7 @@ export default {
       this.exercises = response.data.exercises;
       this.user = response.data.user;
       this.workout_exercises = response.data.workout_exercises;
+      this.current_user_id = response.data.user_id;
       console.log("Current user id", this.user_id);
       console.log("This workout", this.workout.user_id);
       console.log("Exercises", this.exercises);

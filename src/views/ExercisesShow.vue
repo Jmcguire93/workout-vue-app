@@ -5,9 +5,10 @@
       <p>{{ exercise.muscle_group }}</p>
       <p>{{ exercise.instructions }}</p>
       <img v-bind:src="exercise.image" alt="exercise.name" />
-      <li v-if="$parent.getUserId() == user_id">
+      <li v-if="$parent.getUserId() == current_user_id">
         <button v-on:click="openModal()">Add Exercise</button>
       </li>
+      <br />
       <router-link to="/exercises">Back to all exercises</router-link>
       <dialog id="workout-exercises">
         <form method="dialog">
@@ -57,6 +58,7 @@ export default {
       selectedWorkoutId: 0,
       selected: "",
       user_id: localStorage.getItem("user_id"),
+      current_user_id: {},
     };
   },
   created: function () {
