@@ -2,8 +2,8 @@
   <div class="workouts-show">
     <div class="container">
       <h2>{{ workout.name }}</h2>
-      <p>{{ workout.description }}</p>
       <p>Created by: {{ user.username }}</p>
+      <p>{{ workout.description }}</p>
       <div v-for="(exercise, index) in exercises" :key="exercise.id">
         <!-- <div v-for="workout_exercise in workout_exercises" :key="workout_exercise.id"> -->
         <p>Exercise: {{ exercise.name }}</p>
