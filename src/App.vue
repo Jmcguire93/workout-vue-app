@@ -3,14 +3,14 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
-      <router-link to="/about">About</router-link>
+      <router-link to="/exercises">Exercises</router-link>
       |
       <router-link to="/workouts">Workouts</router-link>
       |
-      <router-link to="/exercises">Exercises</router-link>
-      |
       <li v-if="isLoggedIn()">
         <router-link to="/workouts/new">Create Workout</router-link>
+        |
+        <router-link to="/about">About</router-link>
         |
       </li>
       <li v-if="!isLoggedIn()">

@@ -4,38 +4,39 @@
       <h2>{{ workout.name }}</h2>
       <p>Created by: {{ user.username }}</p>
       <p>{{ workout.description }}</p>
-      <div v-for="(exercise, index) in exercises" :key="exercise.id">
+      <div v-for="workout_exercise in workout_exercises" :key="workout_exercise.id">
         <!-- <div v-for="workout_exercise in workout_exercises" :key="workout_exercise.id"> -->
-        <p>Exercise: {{ exercise.name }}</p>
-        <p>Sets: {{ workout_exercises[index].sets }}, Reps: {{ workout_exercises[index].reps }}</p>
-        <!-- <p>Reps: {{ workout_exercises[index].reps }}</p> -->
-        <p>Weight: {{ workout_exercises[index].weight }}</p>
-        <p>Notes: {{ workout_exercises[index].notes }}</p>
+        <p>Exercise: {{ getExercise(workout_exercise.exercise_id).name }}</p>
+        <p>Sets: {{ workout_exercise.sets }}, Reps: {{ workout_exercise.reps }}</p>
+        <!-- <p>Reps: {{ workout_exercise.reps }}</p> -->
+        <p>Weight: {{ workout_exercise.weight }}</p>
+        <p>Notes: {{ workout_exercise.notes }}</p>
 
         <li v-if="$parent.getUserId() == user_id">
-          <button v-on:click="openModal()">Edit Exercise</button>
+          <button v-on:click="openModal(workout_exercise.id)">Edit Exercise</button>
         </li>
       </div>
       <dialog id="workout-exercises">
         <form method="dialog">
           <p>
             Sets:
-            <input type="text" v-model="newWorkoutExerciseParams.sets" />
+            <input type="text" v-model="exerciseParams.sets" />
           </p>
           <p>
             Reps:
-            <input type="text" v-model="newWorkoutExerciseParams.reps" />
+            <input type="text" v-model="exerciseParams.reps" />
           </p>
           <p>
             Weight:
-            <input type="text" v-model="newWorkoutExerciseParams.weight" />
+            <input type="text" v-model="exerciseParams.weight" />
           </p>
           <p>
             Notes:
-            <input type="text" v-model="newWorkoutExerciseParams.notes" />
+            <input type="text" v-model="exerciseParams.notes" />
           </p>
           <button>Close</button>
           <button v-on:click="updateWorkoutExercise()">Update Exercise</button>
+          <button v-on:click="destroyWorkoutExercise()">Delete Exercise</button>
         </form>
       </dialog>
 
@@ -43,6 +44,8 @@
         <router-link v-bind:to="`/workouts/${workout.id}/edit`"><button>Edit workout</button></router-link>
       </li>
       <router-link to="/workouts">Back to all workouts</router-link>
+      |
+      <router-link to="/exercises">Select an exercise to add</router-link>
     </div>
   </div>
 </template>
@@ -61,6 +64,7 @@ export default {
       workout_exercises: [],
       newWorkoutExerciseParams: {},
       currentWorkoutExercise: {},
+      exerciseParams: {},
     };
   },
   created: function () {
@@ -78,14 +82,34 @@ export default {
     });
   },
   methods: {
-    openModal: function () {
+    openModal: function (exercise_id) {
+      // debugger;
       document.querySelector("#workout-exercises").showModal();
+      var exercise_found = this.workout_exercises.find((exercise) => exercise.id == exercise_id);
+      console.log(exercise_id);
+      console.log(exercise_found);
+      this.exerciseParams = { ...exercise_found };
     },
     updateWorkoutExercise: function () {
-      axios.patch(`/workout_exercises/${this.$route.params.id}`, this.newWorkoutExerciseParams).then((response) => {
+      axios.patch(`/workout_exercises/${this.exerciseParams.id}`, this.exerciseParams).then((response) => {
         console.log(response.data);
-        this.$router.push(`/workouts/${this.$route.params.id}`);
+        // this.$router.push(`/workouts/${this.$route.params.id}`);
+        this.$router.go();
       });
+    },
+    destroyWorkoutExercise: function () {
+      axios.delete(`/workout_exercises/${this.exerciseParams.id}`).then((response) => {
+        console.log("Workout deleted", response.data);
+        this.$router.go();
+      });
+    },
+    getExercise: function (exercise_id) {
+      // debugger;
+      // return this.exercises.find((exercise) => (exercise.id = exercise_id));
+      var findExercise = this.exercises.find((exercise) => exercise.id == exercise_id);
+      console.log("Find Exercise", findExercise);
+      console.log("Exercise ID", exercise_id);
+      return findExercise;
     },
   },
 };
