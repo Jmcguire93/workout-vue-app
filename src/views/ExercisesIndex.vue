@@ -12,12 +12,10 @@
 
                   <section>
                     <header class="major">
-                      <h2>Subheading</h2>
+                      <h2>Description</h2>
                     </header>
                     <p>
-                      Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis
-                      eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus sit amet
-                      pulvinar. Nam turpis nisi consequat etiam.
+                      {{ exercise.instructions }}
                     </p>
                     <footer>
                       <a href="#" class="button icon solid fa-info-circle">Find out more</a>
@@ -57,7 +55,6 @@
 
                     <span class="image featured">
                       <img v-bind:src="exercise.image" alt="exercise.name" />
-                      alt="" />
                     </span>
 
                     <p>
