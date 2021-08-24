@@ -51,11 +51,14 @@
 
                   <article>
                     <header class="major">
-                      <h2>Left Sidebar</h2>
-                      <p>Which means the sidebar is on the left</p>
+                      <h2>{{ exercise.name }}</h2>
+                      <p>{{ exercise.muscle_group }}</p>
                     </header>
 
-                    <span class="image featured"><img src="images/pic08.jpg" alt="" /></span>
+                    <span class="image featured">
+                      <img v-bind:src="exercise.image" alt="exercise.name" />
+                      alt="" />
+                    </span>
 
                     <p>
                       Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis
