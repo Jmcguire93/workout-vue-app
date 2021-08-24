@@ -18,8 +18,10 @@
                       {{ exercise.instructions }}
                     </p>
                     <footer>
-                      <a href="`/exercises/${exercise.id}`" class="button icon solid fa-info-circle">Find out more</a>
-                      <router-link v-bind:to="`/exercises/${exercise.id}`">Link to exercise</router-link>
+                      <router-link v-bind:to="`/exercises/${exercise.id}`" class="button icon solid fa-info-circle">
+                        Link to exercise
+                      </router-link>
+                      <!-- <a href="`/exercises/${exercise.id}`" class="button icon solid fa-info-circle">Find out more</a> -->
                     </footer>
                   </section>
 
