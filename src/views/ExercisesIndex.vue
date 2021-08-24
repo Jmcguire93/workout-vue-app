@@ -12,17 +12,18 @@
 
                   <section>
                     <header class="major">
-                      <h2>Description</h2>
+                      <h2>Instructions</h2>
                     </header>
                     <p>
                       {{ exercise.instructions }}
                     </p>
                     <footer>
-                      <a href="#" class="button icon solid fa-info-circle">Find out more</a>
+                      <a href="`/exercises/${exercise.id}`" class="button icon solid fa-info-circle">Find out more</a>
+                      <router-link v-bind:to="`/exercises/${exercise.id}`">Link to exercise</router-link>
                     </footer>
                   </section>
 
-                  <section>
+                  <!-- <section>
                     <header class="major">
                       <h2>Subheading</h2>
                     </header>
@@ -40,7 +41,7 @@
                     <footer>
                       <a href="#" class="button icon solid fa-arrow-circle-right">Do Something</a>
                     </footer>
-                  </section>
+                  </section> -->
                 </div>
               </div>
               <div class="col-8 col-12-medium imp-medium">
@@ -57,7 +58,7 @@
                       <img v-bind:src="exercise.image" alt="exercise.name" />
                     </span>
 
-                    <p>
+                    <!-- <p>
                       Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis
                       eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus sit amet
                       pulvinar. Nam turpis nisi consequat etiam lorem ipsum dolor sit amet nullam.
@@ -82,7 +83,7 @@
                       fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
                       Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu. Vestibulum
                       purus augue, tincidunt sit amet iaculis id, porta eu purus.
-                    </p>
+                    </p> -->
                   </article>
                 </div>
               </div>
