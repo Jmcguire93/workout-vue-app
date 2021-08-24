@@ -6,47 +6,7 @@
         <div class="inner">
           <div class="container">
             <div class="row">
-              <div class="col-4 col-12-medium">
-                <div id="sidebar">
-                  <!-- Sidebar -->
-
-                  <section>
-                    <header class="major">
-                      <h2>Instructions</h2>
-                    </header>
-                    <p>
-                      {{ exercise.instructions }}
-                    </p>
-                    <footer>
-                      <router-link v-bind:to="`/exercises/${exercise.id}`" class="button icon solid fa-info-circle">
-                        Link to exercise
-                      </router-link>
-                      <!-- <a href="`/exercises/${exercise.id}`" class="button icon solid fa-info-circle">Find out more</a> -->
-                    </footer>
-                  </section>
-
-                  <!-- <section>
-                    <header class="major">
-                      <h2>Subheading</h2>
-                    </header>
-                    <ul class="style2">
-                      <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-                      <li><a href="#">Ornare in hendrerit in lectus</a></li>
-                      <li><a href="#">Semper mod quis eget mi dolore</a></li>
-                      <li><a href="#">Quam turpis feugiat sit dolor</a></li>
-                      <li><a href="#">Amet ornare in hendrerit in lectus</a></li>
-                      <li><a href="#">Semper mod quisturpis nisi</a></li>
-                      <li><a href="#">Consequat etiam lorem phasellus</a></li>
-                      <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
-                      <li><a href="#">Semper mod quisturpis nisi</a></li>
-                    </ul>
-                    <footer>
-                      <a href="#" class="button icon solid fa-arrow-circle-right">Do Something</a>
-                    </footer>
-                  </section> -->
-                </div>
-              </div>
-              <div class="col-8 col-12-medium imp-medium">
+              <div class="col-8 col-12-medium">
                 <div id="content">
                   <!-- Content -->
 
@@ -89,19 +49,50 @@
                   </article>
                 </div>
               </div>
+              <div class="col-4 col-12-medium">
+                <div id="sidebar">
+                  <!-- Sidebar -->
+
+                  <section>
+                    <header class="major">
+                      <h2>Instructions</h2>
+                    </header>
+                    <p>
+                      {{ exercise.instructions }}
+                    </p>
+                    <footer>
+                      <router-link v-bind:to="`/exercises/${exercise.id}`" class="button icon solid fa-info-circle">
+                        Link to Exercise
+                      </router-link>
+                    </footer>
+                  </section>
+
+                  <!-- <section>
+                    <header class="major">
+                      <h2>Subheading</h2>
+                    </header>
+                    <ul class="style2">
+                      <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
+                      <li><a href="#">Ornare in hendrerit in lectus</a></li>
+                      <li><a href="#">Semper mod quis eget mi dolore</a></li>
+                      <li><a href="#">Quam turpis feugiat sit dolor</a></li>
+                      <li><a href="#">Amet ornare in hendrerit in lectus</a></li>
+                      <li><a href="#">Semper mod quisturpis nisi</a></li>
+                      <li><a href="#">Consequat etiam lorem phasellus</a></li>
+                      <li><a href="#">Amet turpis, feugiat et sit amet</a></li>
+                      <li><a href="#">Semper mod quisturpis nisi</a></li>
+                    </ul>
+                    <footer>
+                      <a href="#" class="button icon solid fa-arrow-circle-right">Do Something</a>
+                    </footer>
+                  </section> -->
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <h1>{{ message }}</h1>
-    <div v-for="exercise in exercises" :key="exercise.id">
-      <h2>{{ exercise.name }}</h2>
-      <p>Muscle Group: {{ exercise.muscle_group }}</p>
-
-      <img v-bind:src="exercise.image" alt="exercise.name" />
-      <p><router-link v-bind:to="`/exercises/${exercise.id}`">Link to exercise</router-link></p>
-    </div> -->
   </div>
 </template>
 
