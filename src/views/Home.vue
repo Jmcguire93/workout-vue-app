@@ -56,10 +56,8 @@
               </div>
               <div class="col-12">
                 <p>
-                  WorkoutApp understands the importance of living a healthy lifestyle. With us, you can learn what
-                  muscle groups exercises are targetting and how to perform them with our detailed instructions! Not
-                  sure where to begin? As a user, you have access to browse all workouts created by other users. Want to
-                  get creative? - build your own!
+                  <strong>View, build and create!</strong>
+                  Start sharing your exercise experience with others.
                 </p>
               </div>
             </div>

@@ -18,6 +18,9 @@
                   </header>
 
                   <router-link to="/exercises/" class="button icon solid fa-info-circle">Add Exercise</router-link>
+                  <router-link v-bind:to="`/workouts/${workout.id}/edit`" class="button icon solid fa-info-circle">
+                    Edit Workout
+                  </router-link>
 
                   <span class="image featured"><img src="images/pic08.jpg" alt="" /></span>
                   <table class="table">
