@@ -78,7 +78,7 @@
 <style scoped>
 .image img {
   display: block;
-  width: 300px;
+  width: 320px;
   height: 240px;
   object-fit: cover;
   border-radius: 8px;

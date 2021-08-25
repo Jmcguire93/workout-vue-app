@@ -144,7 +144,7 @@
 .featured img {
   display: block;
   position: inherit;
-  width: 332px;
+  width: 380px;
   height: 196px;
   object-fit: cover;
   border-radius: 8px;
