@@ -43,7 +43,7 @@
                   </li>
                   <li><a href="/workouts">Workouts</a></li>
                   <li><a href="/exercises">Exercises</a></li>
-                  <li v-if="!isLoggedIn()"><a href="/workouts/new">New Workout</a></li>
+                  <li v-if="isLoggedIn()"><a href="/workouts/new">New Workout</a></li>
                 </ul>
               </nav>
             </div>

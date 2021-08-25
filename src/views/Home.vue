@@ -29,7 +29,7 @@
               </div>
               <div class="col-4 col-12-medium">
                 <section>
-                  <a href="/workouts" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+                  <a href="/workouts" class="image featured"><img src="images/workouts.png" alt="" /></a>
                   <header class="second icon solid fa-user">
                     <h3>Workouts</h3>
                     <p>View user created workouts</p>
@@ -38,7 +38,7 @@
               </div>
               <div class="col-4 col-12-medium">
                 <section>
-                  <a href="/exercises" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                  <a href="/exercises" class="image featured"><img src="images/exercises6.png" alt="" /></a>
                   <header class="second icon solid fa-chart-bar">
                     <h3>Exercises</h3>
                     <p>Explore exercises</p>
@@ -47,7 +47,7 @@
               </div>
               <div class="col-4 col-12-medium">
                 <section>
-                  <a href="/workouts/new" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+                  <a href="/workouts/new" class="image featured"><img src="images/create_workout.jpeg" alt="" /></a>
                   <header class="second icon solid fa-cog">
                     <h3>Create Workout</h3>
                     <p>Create your own</p>
@@ -56,9 +56,10 @@
               </div>
               <div class="col-12">
                 <p>
-                  Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum
-                  ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam
-                  eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet pulvinar. Nam nec turpis.
+                  WorkoutApp understands the importance of living a healthy lifestyle. With us, you can learn what
+                  muscle groups exercises are targetting and how to perform them with our detailed instructions! Not
+                  sure where to begin? As a user, you have access to browse all workouts created by other users. Want to
+                  get creative? - build your own!
                 </p>
               </div>
             </div>
@@ -139,6 +140,14 @@
   display: block;
   width: 180px;
   height: 167px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.featured img {
+  display: block;
+  position: inherit;
+  width: 332px;
+  height: 196px;
   object-fit: cover;
   border-radius: 8px;
 }
