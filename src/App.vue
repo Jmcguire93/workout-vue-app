@@ -18,17 +18,11 @@
                   <li>
                     <a href="#">Get Started</a>
                     <ul>
-                      <li v-if="isLoggedIn()">
-                        <a href="/workouts/new">Create Workout</a>
-                      </li>
                       <li v-if="!isLoggedIn()">
                         <a href="/login">Login</a>
                       </li>
                       <li v-if="!isLoggedIn()">
                         <a href="/signup">Signup</a>
-                      </li>
-                      <li v-if="isLoggedIn()">
-                        <a href="/logout">Logout</a>
                       </li>
                       <li>
                         <a href="/workouts">Workouts</a>
@@ -36,8 +30,14 @@
                       <li>
                         <a href="/exercises">Exercises</a>
                       </li>
+                      <li v-if="isLoggedIn()">
+                        <a href="/workouts/new">Create Workout</a>
+                      </li>
                       <li>
                         <a href="/about">About</a>
+                      </li>
+                      <li v-if="isLoggedIn()">
+                        <a href="/logout">Logout</a>
                       </li>
                     </ul>
                   </li>
