@@ -1,17 +1,17 @@
 <template>
   <div class="home">
     <!-- Banner -->
-    <div id="banner">
+    <!-- <div id="banner">
       <h2>
         <strong>WorkoutApp:</strong>
-        A free responsive site template
+
         <br />
-        built on HTML5 and CSS3 by
+        A community for exercise creation and exploration
         <a href="http://html5up.net">HTML5 UP</a>
       </h2>
       <p>Does this statement make you want to click the big shiny button?</p>
       <a href="#" class="button large icon solid fa-check-circle">Yes it does</a>
-    </div>
+    </div> -->
     <div id="main-wrapper">
       <div class="wrapper style1">
         <div class="inner">
@@ -19,10 +19,10 @@
             <div class="row">
               <div class="col-12">
                 <header class="first major">
-                  <h2>This is an important heading</h2>
+                  <h2>Start working out today</h2>
                   <p>
-                    And this is where we talk about why we’re
-                    <strong>pretty awesome</strong>
+                    View other users workouts, or
+                    <strong>create your own</strong>
                     ...
                   </p>
                 </header>
@@ -81,7 +81,7 @@
                     <a href="/workouts" class="image left"><img src="images/pic04.jpg" alt="" /></a>
                     <div>
                       <header>
-                        <span class="date">{{ workout.created_at }}</span>
+                        <span class="date">{{ new Date(workout.created_at).toDateString() }}</span>
                         <h3>
                           <a href="#">{{ workout.name }}</a>
                         </h3>
