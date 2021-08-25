@@ -29,7 +29,7 @@
               </div>
               <div class="col-4 col-12-medium">
                 <section>
-                  <a href="/workouts" class="image featured"><img src="images/workouts.png" alt="" /></a>
+                  <a href="/workouts" class="image featured"><img src="images/exercises6.png" alt="" /></a>
                   <header class="second icon solid fa-user">
                     <h3>Workouts</h3>
                     <p>View user created workouts</p>
@@ -38,7 +38,7 @@
               </div>
               <div class="col-4 col-12-medium">
                 <section>
-                  <a href="/exercises" class="image featured"><img src="images/exercises6.png" alt="" /></a>
+                  <a href="/exercises" class="image featured"><img src="images/workouts.png" alt="" /></a>
                   <header class="second icon solid fa-chart-bar">
                     <h3>Exercises</h3>
                     <p>Explore exercises</p>
