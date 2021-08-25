@@ -21,9 +21,9 @@
                 <div class="col-4 col-12-medium">
                   <section>
                     <router-link v-bind:to="`/workouts/${workout.id}`" class="image featured">
-                      <img src="images/pic01.jpg" alt="" />
+                      <span><img :src="getExerciseImage(workout)" alt="" /></span>
                     </router-link>
-                    <header class="second icon solid fa-user">
+                    <header>
                       <h3>{{ workout.name }}</h3>
                       <p>{{ workout.description }}</p>
                     </header>
@@ -74,6 +74,16 @@
   </div>
 </template>
 
+<style scoped>
+.image img {
+  display: block;
+  width: 300px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+</style>
+
 <script>
 import axios from "axios";
 
@@ -95,6 +105,16 @@ export default {
         this.workouts = response.data;
         console.log("All workouts:", this.workouts);
       });
+    },
+    getExerciseImage: function (workout) {
+      // debugger;
+      const workout_exercises = workout.workout_exercises;
+
+      if (workout_exercises.length) {
+        const [workout_exercise] = workout_exercises;
+        const exercise = workout.exercises.find((e) => e.id == workout_exercise.exercise_id);
+        return exercise.image;
+      }
     },
   },
 };

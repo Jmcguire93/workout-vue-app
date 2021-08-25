@@ -6,20 +6,80 @@
         <div class="wrapper style2">
           <div class="inner">
             <div class="container">
-              <div class="row">
-                <div class="col-8 col-12-medium">
-                  <div id="content">
-                    <!-- Content -->
+              <!-- <div class="row"> -->
+              <!-- <div class="col-8 col-12-medium"> -->
+              <div id="content">
+                <!-- Content -->
 
-                    <article>
-                      <header class="major">
-                        <h2>{{ workout.name }}</h2>
-                        <p>{{ workout.description }}</p>
-                      </header>
+                <article>
+                  <header class="major">
+                    <h2>{{ workout.name }}</h2>
+                    <p>{{ workout.description }}</p>
+                  </header>
 
-                      <span class="image featured"><img src="images/pic08.jpg" alt="" /></span>
+                  <router-link to="/exercises/" class="button icon solid fa-info-circle">Add Exercise</router-link>
 
-                      <!-- <p>
+                  <span class="image featured"><img src="images/pic08.jpg" alt="" /></span>
+                  <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th tabindex="0" style="" data-field="id">
+                          <div class="th-inner both">Exercise Name</div>
+                          <div class="fht-cell"></div>
+                        </th>
+                        <th tabindex="0" style="" data-field="name">
+                          <div class="th-inner both">Sets</div>
+                          <div class="fht-cell"></div>
+                        </th>
+                        <th tabindex="0" style="" data-field="price">
+                          <div class="th-inner both">Reps</div>
+                          <div class="fht-cell"></div>
+                        </th>
+                        <th tabindex="0" style="" data-field="price">
+                          <div class="th-inner both">Weight</div>
+                          <div class="fht-cell"></div>
+                        </th>
+                        <th tabindex="0" style="" data-field="price">
+                          <div class="th-inner both">Notes</div>
+                          <div class="fht-cell"></div>
+                        </th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="workout_exercise in workout_exercises" :key="workout_exercise.id">
+                        <td>{{ getExercise(workout_exercise.exercise_id).name }}</td>
+                        <td>{{ workout_exercise.sets }}</td>
+                        <td>{{ workout_exercise.reps }}</td>
+                        <td>{{ workout_exercise.weight }}</td>
+                        <td>{{ workout_exercise.notes }}</td>
+                        <td>
+                          <a v-on:click="openModal(workout_exercise.id)" class="small button icon solid fa-info-circle">
+                            Edit Exercise
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- <section>
+                        <header class="major">
+                          <h2>Exercises</h2>
+                        </header>
+                        <div v-for="workout_exercise in workout_exercises" :key="workout_exercise.id">
+                          <h3>{{ getExercise(workout_exercise.exercise_id).name }}</h3>
+                          <div>Sets: {{ workout_exercise.sets }}, Reps: {{ workout_exercise.reps }}</div>
+
+                          <div>Weight: {{ workout_exercise.weight }}</div>
+                          <div>Notes: {{ workout_exercise.notes }}</div>
+                          <footer>
+                            <a v-on:click="openModal(workout_exercise.id)" class="button icon solid fa-info-circle">
+                              Edit Exercise
+                            </a>
+                          </footer>
+                        </div>
+                      </section> -->
+
+                  <!-- <p>
                         Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis
                         eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus sit amet
                         pulvinar. Nam turpis nisi consequat etiam lorem ipsum dolor sit amet nullam.
@@ -45,22 +105,20 @@
                         pretium. Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
                         Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.
                       </p> -->
-                    </article>
-                  </div>
-                </div>
-                <div class="col-4 col-12-medium">
-                  <div id="sidebar">
-                    <!-- Sidebar -->
+                </article>
+              </div>
+              <!-- </div> -->
+              <!-- <div class="col-4 col-12-medium"> -->
+              <!-- <div id="sidebar"> -->
+              <!-- Sidebar -->
 
-                    <section>
+              <!-- <section>
                       <header class="major">
                         <h2>Exercises</h2>
                       </header>
                       <div v-for="workout_exercise in workout_exercises" :key="workout_exercise.id">
-                        <!-- <div v-for="workout_exercise in workout_exercises" :key="workout_exercise.id"> -->
                         <h3>{{ getExercise(workout_exercise.exercise_id).name }}</h3>
                         <div>Sets: {{ workout_exercise.sets }}, Reps: {{ workout_exercise.reps }}</div>
-                        <!-- <div>Reps: {{ workout_exercise.reps }}</div> -->
 
                         <div>Weight: {{ workout_exercise.weight }}</div>
                         <div>Notes: {{ workout_exercise.notes }}</div>
@@ -70,9 +128,9 @@
                           </a>
                         </footer>
                       </div>
-                    </section>
+                    </section> -->
 
-                    <!-- <section>
+              <!-- <section>
                       <header class="major">
                         <h2>Subheading</h2>
                       </header>
@@ -91,9 +149,9 @@
                         <a href="#" class="button icon solid fa-arrow-circle-right">Do Something</a>
                       </footer>
                     </section> -->
-                  </div>
-                </div>
-              </div>
+              <!-- </div> -->
+              <!-- </div> -->
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -139,6 +197,58 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.table .thead-light th {
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+th {
+  font-weight: bold;
+  text-align: left;
+}
+.button.small {
+  font-size: 0.75em;
+  padding: 0.75em 1.75em;
+}
+</style>
 
 <script>
 import axios from "axios";
@@ -201,6 +311,9 @@ export default {
       console.log("Exercise ID", exercise_id);
       return findExercise;
     },
+    // getExerciseImage: function (workout) {
+    //   return workout.exercises[0].image;
+    // },
   },
 };
 </script>
