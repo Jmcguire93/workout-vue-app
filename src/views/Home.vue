@@ -83,13 +83,19 @@
                     </a>
                     <div>
                       <header>
-                        <span class="date">{{ new Date(workout.created_at).toDateString() }}</span>
+                        <span class="date">
+                          <strong>{{ new Date(workout.created_at).toDateString() }}</strong>
+                        </span>
                         <h3>
                           <a href="#">{{ workout.name }}</a>
                         </h3>
                       </header>
                       <p>
                         {{ workout.description }}
+                      </p>
+                      <p>
+                        Created by
+                        <strong>{{ workout.user.username }}</strong>
                       </p>
                     </div>
                   </article>
