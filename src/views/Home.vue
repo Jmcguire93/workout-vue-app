@@ -78,7 +78,9 @@
                 <!-- Excerpt -->
                 <div v-for="workout in workouts" :key="workout.id" id="main-wrapper">
                   <article class="box excerpt">
-                    <a href="/workouts" class="image left"><img src="images/pic04.jpg" alt="" /></a>
+                    <a href="/workouts" class="image left recent-post">
+                      <img :src="getExerciseImage(workout)" alt="" />
+                    </a>
                     <div>
                       <header>
                         <span class="date">{{ new Date(workout.created_at).toDateString() }}</span>
@@ -126,7 +128,15 @@
   </div>
 </template>
 
-<style></style>
+<style scoped>
+.recent-post img {
+  display: block;
+  width: 180px;
+  height: 167px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+</style>
 
 <script>
 import axios from "axios";
@@ -150,6 +160,15 @@ export default {
         this.workouts = response.data;
         console.log("All workouts:", this.workouts);
       });
+    },
+    getExerciseImage: function (workout) {
+      const workout_exercises = workout.workout_exercises;
+
+      if (workout_exercises.length) {
+        const [workout_exercise] = workout_exercises;
+        const exercise = workout.exercises.find((e) => e.id == workout_exercise.exercise_id);
+        return exercise.image;
+      }
     },
   },
 };
