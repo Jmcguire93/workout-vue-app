@@ -56,19 +56,21 @@
 
                     <section>
                       <header class="major">
-                        <h2>Subheading</h2>
+                        <h2>Instructions</h2>
                       </header>
                       <p>
-                        Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis
-                        eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus sit amet
-                        pulvinar. Nam turpis nisi consequat etiam.
+                        {{ exercise.instructions }}
                       </p>
                       <footer>
-                        <a href="#" class="button icon solid fa-info-circle">Find out more</a>
+                        <p>
+                          <!-- v-if="$parent.getUserId() == user_id"> -->
+                          <!-- <button v-on:click="openModal()">Add Exercise</button> -->
+                          <a v-on:click="openModal()" class="button icon solid fa-info-circle">Add Exercise</a>
+                        </p>
                       </footer>
                     </section>
 
-                    <section>
+                    <!-- <section>
                       <header class="major">
                         <h2>Subheading</h2>
                       </header>
@@ -86,7 +88,7 @@
                       <footer>
                         <a href="#" class="button icon solid fa-arrow-circle-right">Do Something</a>
                       </footer>
-                    </section>
+                    </section> -->
                   </div>
                 </div>
               </div>
@@ -94,14 +96,14 @@
           </div>
         </div>
       </div>
-      <h2>{{ exercise.name }}</h2>
+      <!-- <h2>{{ exercise.name }}</h2>
       <p>{{ exercise.muscle_group }}</p>
       <p>{{ exercise.instructions }}</p>
       <img v-bind:src="exercise.image" alt="exercise.name" />
       <li v-if="$parent.getUserId() == user_id">
         <button v-on:click="openModal()">Add Exercise</button>
       </li>
-      <router-link to="/exercises">Back to all exercises</router-link>
+      <router-link to="/exercises">Back to all exercises</router-link> -->
       <dialog id="workout-exercises">
         <form method="dialog">
           <select v-model="selected">
