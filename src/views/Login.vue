@@ -1,15 +1,15 @@
 <template>
   <div class="login d-flex justify-content-center">
-    <form v-on:submit.prevent="submit()">
+    <form class="flex-down" v-on:submit.prevent="submit()">
       <h1>Login</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
-      <div class="post-image-body">
+      <div class="flex-down">
         <h1>Email:</h1>
         <input type="email" v-model="newSessionParams.email" />
-      </div>
-      <div class="post-image-body">
+        <!-- </div>
+      <div class="post-image-body"> -->
         <h1>Password:</h1>
         <input type="password" v-model="newSessionParams.password" />
       </div>
@@ -19,22 +19,12 @@
 </template>
 
 <style>
-form {
-  align-items: center;
-  text-align: center;
-  width: 50%;
-}
-
-input {
-  width: 20%;
-  text-align: center;
-}
-/* .post-image-body {
+.post-image-body {
   display: flex;
   align-items: center;
   padding: 10px;
   justify-content: space-between;
-} */
+}
 .post-image-body * {
   flex: 1 1 auto;
   text-align: center;
@@ -47,9 +37,11 @@ input {
   flex-direction: column;
 
   justify-content: space-between;
+  /* width: 50%; */
 }
 .flex-down * {
   margin: 10px;
+  max-width: 540px;
 }
 
 h1 {
