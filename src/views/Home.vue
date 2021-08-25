@@ -50,7 +50,7 @@
                   <a href="/workouts/new" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
                   <header class="second icon solid fa-cog">
                     <h3>Create Workout</h3>
-                    <p>Create your own!</p>
+                    <p>Create your own</p>
                   </header>
                 </section>
               </div>

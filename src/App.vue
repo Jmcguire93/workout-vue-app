@@ -41,9 +41,9 @@
                       </li>
                     </ul>
                   </li>
+                  <li><a href="/workouts">Workouts</a></li>
                   <li><a href="/exercises">Exercises</a></li>
-                  <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                  <li><a href="no-sidebar.html">No Sidebar</a></li>
+                  <li v-if="!isLoggedIn()"><a href="/workouts/new">New Workout</a></li>
                 </ul>
               </nav>
             </div>
