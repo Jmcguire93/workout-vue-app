@@ -26,6 +26,7 @@
                     <header>
                       <h3>{{ workout.name }}</h3>
                       <p>{{ workout.description }}</p>
+                      <p>Created by: {{ workout.user.username }}</p>
                     </header>
                   </section>
                 </div>
