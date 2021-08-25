@@ -13,10 +13,6 @@
         <label>Description:</label>
         <input type="text" v-model="currentWorkoutParams.description" />
       </div>
-      <!-- <div>
-        <label>Image:</label>
-        <input type="text" v-model="currentWorkoutParams.image" />
-      </div> -->
 
       <input type="submit" value="Submit" />
     </form>

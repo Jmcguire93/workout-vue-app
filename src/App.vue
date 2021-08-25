@@ -31,10 +31,10 @@
                         <a href="/logout">Logout</a>
                       </li>
                       <li>
-                        <a href="/exercises">Exercises</a>
+                        <a href="/workouts">Workouts</a>
                       </li>
                       <li>
-                        <a href="/workouts">Workouts</a>
+                        <a href="/exercises">Exercises</a>
                       </li>
                       <li>
                         <a href="/about">About</a>
