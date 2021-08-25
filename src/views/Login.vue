@@ -6,11 +6,11 @@
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div class="post-image-body">
-        <label>Email:</label>
+        <h1>Email:</h1>
         <input type="email" v-model="newSessionParams.email" />
       </div>
       <div class="post-image-body">
-        <label>Password:</label>
+        <h1>Password:</h1>
         <input type="password" v-model="newSessionParams.password" />
       </div>
       <input type="submit" value="Submit" />
@@ -22,11 +22,12 @@
 form {
   align-items: center;
   text-align: center;
+  width: 50%;
 }
 
 input {
+  width: 20%;
   text-align: center;
-  width: 40%;
 }
 /* .post-image-body {
   display: flex;
@@ -49,6 +50,10 @@ input {
 }
 .flex-down * {
   margin: 10px;
+}
+
+h1 {
+  color: white;
 }
 </style>
 
