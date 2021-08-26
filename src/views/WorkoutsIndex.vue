@@ -53,7 +53,7 @@
               <div class="col-12">
                 <!-- <p>Explore and select any of the workouts above!</p> -->
                 <!-- <router-link to="/">Back to Home</router-link> -->
-                <router-link to="/" class="button icon solid fa-info-circle">Link to Home</router-link>
+                <router-link to="/" class="button icon solid fa-info-circle">Back to Home</router-link>
               </div>
             </div>
           </section>

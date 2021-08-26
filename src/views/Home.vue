@@ -86,7 +86,7 @@
                           <strong>{{ new Date(workout.created_at).toDateString() }}</strong>
                         </span>
                         <h3>
-                          <a href="#">{{ workout.name }}</a>
+                          <router-link v-bind:to="`/workouts/${workout.id}`">{{ workout.name }}</router-link>
                         </h3>
                       </header>
                       <p>
