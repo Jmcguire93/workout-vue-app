@@ -103,33 +103,38 @@
             </div>
             <div class="col-4 col-12-medium">
               <!-- Spotlight -->
-              <section class="box spotlight">
+              <!-- <section class="box spotlight">
                 <h2 class="icon fa-file-alt">Spotlight</h2>
-                <article v-for="workout in workouts" :key="workout.id" id="">
-                  <a href="/workouts" class="">
-                    <img :src="getExerciseImage(workout)" alt="" />
+                <article v-for="last_workout in last_workouts" :key="last_workout.id" id="">
+                  <a href="/last_workouts" class="">
+                    <img :src="getExerciseImage(last_workout)" alt="" />
                   </a>
                   <header>
                     <h3>
-                      <a href="#">{{ workout.name }}</a>
+                      <a href="">{{ last_workout.name }}</a>
                     </h3>
-                    <p>{{ workouts.description }}</p>
+                    <p>{{ last_workout.description }}</p>
                   </header>
                   <p>
                     {{ workout.description }}
                   </p>
                   <p>
                     Created by
-                    <strong>{{ workout.user.username }}</strong>
+                    <strong>{{ last_workout.user.username }}</strong>
                     <span class="date">
                       <strong>{{ new Date(workout.created_at).toDateString() }}</strong>
                     </span>
                   </p>
                   <footer>
-                    <a href="#" class="button alt icon solid fa-file-alt">Continue Reading</a>
+                    <router-link
+                      v-bind:to="`/last_workouts/${last_workout.id}`"
+                      class="button icon solid fa-info-circle"
+                    >
+                      Link to Workout
+                    </router-link>
                   </footer>
                 </article>
-              </section>
+              </section> -->
             </div>
           </div>
         </div>
@@ -170,10 +175,12 @@ export default {
     return {
       message: "Welcome to WorkoutApp!",
       workouts: [],
+      last_workout: {},
     };
   },
   created: function () {
     this.indexWorkouts();
+    this.getLastWorkout();
   },
   methods: {
     indexWorkouts: function () {
@@ -190,6 +197,12 @@ export default {
         const exercise = workout.exercises.find((e) => e.id == workout_exercise.exercise_id);
         return exercise.image;
       }
+    },
+    getLastWorkout: function () {
+      axios.get("http://localhost:3000/last_workout").then((response) => {
+        this.last_workout = response.data;
+        console.log("All workouts:", this.last_workout);
+      });
     },
   },
 };

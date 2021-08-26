@@ -51,11 +51,9 @@
               </div>
 
               <div class="col-12">
-                <p>
-                  Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum
-                  ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam
-                  eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet pulvinar. Nam nec turpis.
-                </p>
+                <!-- <p>Explore and select any of the workouts above!</p> -->
+                <!-- <router-link to="/">Back to Home</router-link> -->
+                <router-link to="/" class="button icon solid fa-info-circle">Link to Home</router-link>
               </div>
             </div>
           </section>
