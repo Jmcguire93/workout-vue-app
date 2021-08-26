@@ -103,28 +103,33 @@
             </div>
             <div class="col-4 col-12-medium">
               <!-- Spotlight -->
-              <!-- <section class="box spotlight">
+              <section class="box spotlight">
                 <h2 class="icon fa-file-alt">Spotlight</h2>
-                <article>
-                  <a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+                <article v-for="workout in workouts" :key="workout.id" id="">
+                  <a href="/workouts" class="">
+                    <img :src="getExerciseImage(workout)" alt="" />
+                  </a>
                   <header>
-                    <h3><a href="#">Neural Implants</a></h3>
-                    <p>The pros and cons. Mostly cons.</p>
+                    <h3>
+                      <a href="#">{{ workout.name }}</a>
+                    </h3>
+                    <p>{{ workouts.description }}</p>
                   </header>
                   <p>
-                    Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus semper mod quisturpis nisi
-                    consequat ornare in, hendrerit in lectus semper mod quis eget mi quat etiam lorem. Phasellus quam
-                    turpis, feugiat sed et lorem ipsum dolor consequat dolor feugiat sed et tempus consequat etiam.
+                    {{ workout.description }}
                   </p>
                   <p>
-                    Lorem ipsum dolor quam turpis, feugiat sit amet ornare in, hendrerit in lectus semper mod quisturpis
-                    nisi consequat etiam lorem sed amet quam turpis.
+                    Created by
+                    <strong>{{ workout.user.username }}</strong>
+                    <span class="date">
+                      <strong>{{ new Date(workout.created_at).toDateString() }}</strong>
+                    </span>
                   </p>
                   <footer>
                     <a href="#" class="button alt icon solid fa-file-alt">Continue Reading</a>
                   </footer>
                 </article>
-              </section> -->
+              </section>
             </div>
           </div>
         </div>
@@ -148,6 +153,9 @@
   height: 196px;
   object-fit: cover;
   border-radius: 8px;
+}
+.spotlight img {
+  width: 420px;
 }
 </style>
 

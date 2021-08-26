@@ -54,9 +54,6 @@
 h1 {
   color: white;
 }
-h1 {
-  color: white;
-}
 </style>
 
 <script>

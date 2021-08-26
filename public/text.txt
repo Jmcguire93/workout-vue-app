@@ -175,3 +175,49 @@ export default {
   },
 };
 </script>
+
+
+
+
+
+
+<!-- Spotlight -->
+            <div v-for="workout in workouts" :key="workout.id" class="col-4 col-12-medium">
+              <section class="box spotlight">
+                <h2 class="icon fa-file-alt">Spotlight</h2>
+                <article>
+                  <!-- <div v-for="workout in workouts" :key="workout.id" id=""> -->
+                  <!-- <div> -->
+                  <a href="/workouts" class="spotlight">
+                    <img :src="getExerciseImage(workout)" alt="" />
+                  </a>
+
+                  <header>
+                    <h3>
+                      <a href="#">{{ workout.name }}</a>
+                    </h3>
+                    <p>{{ workout.description }}</p>
+                  </header>
+                  <p>
+                    Created by
+                    <strong>{{ workout.user.username }}</strong>
+                    <span class="date">
+                      <strong>{{ new Date(workout.created_at).toDateString() }}</strong>
+                    </span>
+                  </p>
+
+                  <footer>
+                    <router-link v-bind:to="`/workouts/${workout.id}`" class="button icon solid fa-info-circle">
+                      Link to Workout
+                    </router-link>
+                  </footer>
+                  <!-- </div> -->
+                </article>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
