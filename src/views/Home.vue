@@ -103,9 +103,9 @@
             </div>
             <div class="col-4 col-12-medium">
               <!-- Spotlight -->
-              <!-- <section class="box spotlight">
+              <section class="box spotlight">
                 <h2 class="icon fa-file-alt">Spotlight</h2>
-                <article v-for="last_workout in last_workouts" :key="last_workout.id" id="">
+                <article id="">
                   <a href="/last_workouts" class="">
                     <img :src="getExerciseImage(last_workout)" alt="" />
                   </a>
@@ -115,26 +115,21 @@
                     </h3>
                     <p>{{ last_workout.description }}</p>
                   </header>
-                  <p>
-                    {{ workout.description }}
-                  </p>
+
                   <p>
                     Created by
                     <strong>{{ last_workout.user.username }}</strong>
                     <span class="date">
-                      <strong>{{ new Date(workout.created_at).toDateString() }}</strong>
+                      <strong>{{ new Date(last_workout.created_at).toDateString() }}</strong>
                     </span>
                   </p>
                   <footer>
-                    <router-link
-                      v-bind:to="`/last_workouts/${last_workout.id}`"
-                      class="button icon solid fa-info-circle"
-                    >
+                    <router-link v-bind:to="`/workouts/${last_workout.id}`" class="button icon solid fa-info-circle">
                       Link to Workout
                     </router-link>
                   </footer>
                 </article>
-              </section> -->
+              </section>
             </div>
           </div>
         </div>
@@ -201,7 +196,7 @@ export default {
     getLastWorkout: function () {
       axios.get("http://localhost:3000/last_workout").then((response) => {
         this.last_workout = response.data;
-        console.log("All workouts:", this.last_workout);
+        console.log("Last workouts:", this.last_workout);
       });
     },
   },
