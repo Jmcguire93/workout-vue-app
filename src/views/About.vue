@@ -10,7 +10,7 @@
       </h2>
 
       WorkoutApp understands the importance of living a healthy lifestyle. With us, you can learn what muscle groups
-      exercise sare targetting and how to perform them with our detailed instructions! Not sure where to begin? As a
+      exercises are targetting and how to perform them with our detailed instructions! Not sure where to begin? As a
       user, you have access to browse all workouts created by other users. Want to get creative? - build your own!
 
       <p>
