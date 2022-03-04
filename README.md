@@ -1,5 +1,7 @@
 # workout-vue-app
 
+Frontend for WorkoutApp using Vue.js
+
 ## Project setup
 ```
 npm install
